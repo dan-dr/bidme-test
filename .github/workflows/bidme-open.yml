@@ -1,0 +1,24 @@
+name: "BidMe: Open Bidding Period"
+
+on:
+  schedule:
+    - cron: "0 0 1 * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  open-bidding:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Open new bidding period
+        run: bunx bidme open-bidding
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BIDME_PAT: ${{ secrets.BIDME_PAT }}

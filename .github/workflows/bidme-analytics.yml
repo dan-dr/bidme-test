@@ -1,0 +1,27 @@
+name: "BidMe: Update Analytics"
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  repository_dispatch:
+    types: [bidme-click, bidme-payment-linked]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  update-analytics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Update analytics
+        run: bunx bidme update-analytics
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BIDME_PAT: ${{ secrets.BIDME_PAT }}
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
