@@ -25,10 +25,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: oven-sh/setup-bun@v2
-
       - name: Process bid comment
-        run: bunx bidme process-bid ${{ github.event.issue.number }} ${{ github.event.comment.id }}
+        uses: dan-dr/BIDME.md@main
+        with:
+          command: process-bid
+          issue: ${{ github.event.issue.number }}
+          comment: ${{ github.event.comment.id }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}

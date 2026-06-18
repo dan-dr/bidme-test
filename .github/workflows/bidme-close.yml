@@ -16,10 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: oven-sh/setup-bun@v2
-
       - name: Close bidding period
-        run: bunx bidme close-bidding
+        uses: dan-dr/BIDME.md@main
+        with:
+          command: close-bidding
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}

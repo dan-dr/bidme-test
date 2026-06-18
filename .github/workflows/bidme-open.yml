@@ -16,9 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: oven-sh/setup-bun@v2
-
       - name: Open new bidding period
-        run: bunx bidme open-bidding
+        uses: dan-dr/BIDME.md@main
+        with:
+          command: open-bidding
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -18,10 +18,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: oven-sh/setup-bun@v2
-
       - name: Update analytics
-        run: bunx bidme update-analytics
+        uses: dan-dr/BIDME.md@main
+        with:
+          command: update-analytics
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
