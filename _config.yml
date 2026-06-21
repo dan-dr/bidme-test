@@ -1,5 +1,5 @@
 include:
-  - .bidme/pay
+  - .bidme
 exclude:
   - .bidme/config.toml
   - .bidme/version.json
