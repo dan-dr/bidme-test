@@ -1,0 +1,27 @@
+{
+  "period_id": "period-2026-06-27",
+  "status": "closed",
+  "start_date": "2026-06-27T04:36:50.331Z",
+  "end_date": "2026-07-04T04:36:50.331Z",
+  "issue_number": 7,
+  "issue_url": "https://github.com/dan-dr/bidme-test/issues/7",
+  "issue_node_id": "I_kwDOS14XQM8AAAABG4bvhg",
+  "bids": [
+    {
+      "bidder": "dan-dr",
+      "amount": 130,
+      "banner_url": "https://placehold.co/800x100/2563eb/ffffff.png?text=Sponsorv4",
+      "destination_url": "https://example.com",
+      "tagline": "Sponsor the future v4",
+      "status": "active",
+      "comment_id": 4815251589,
+      "timestamp": "2026-06-27T04:37:22.588Z"
+    }
+  ],
+  "created_at": "2026-06-27T04:36:50.574Z",
+  "payment": {
+    "payment_status": "paid",
+    "stripe_customer_id": "cus_UjFNAVxHeuqbKD",
+    "stripe_payment_intent_id": "pi_3Tmo06ADW0JwE2Lj09lneSiF"
+  }
+}
