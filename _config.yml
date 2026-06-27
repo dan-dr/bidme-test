@@ -1,7 +1,0 @@
-include:
-  - .bidme
-exclude:
-  - .bidme/config.toml
-  - .bidme/version.json
-  - .bidme/data
-  - .bidme/test
